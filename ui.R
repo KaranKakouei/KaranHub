@@ -9,18 +9,16 @@ if (!require("data.table")) { install.packages("data.table", dependencies = TRUE
 if (!require("png")) { install.packages("png", dependencies = TRUE) ; library(png)}
 
 ui <- 
-dashboardPage(     skin = "blue", # theme = shinytheme("cosmo"),
+dashboardPage(     skin = "blue",
   dashboardHeader(
     #style = "position:fixed;", # inherit, width:12%;
     title = tags$a(href="https://github.com/KaranKakouei/KaranHub/", icon("github"), "KaranHub", style = "color: white; font-size: 24px;"),
     tags$li(a(href = 'https://github.com/KaranKakouei/KaranHub/', icon("github"), title = "Back to Apps Hub"), class = "dropdown", style = "size: 20px;margin-right:10px;")),
   dashboardSidebar(
     tags$style(HTML(".main-sidebar{width: 250px;}")),
-#    tags$head(tags$style(HTML('.main-sidebar{width: 300px;}.main-header>.navbar{margin-left: 300px;}.main-header.logo{width: 300px;}.content-wrapper, .main-footer, .right-side{margin-left: 300px;}'))),
     sidebarMenu(
       style = "position:fixed; width: 250px;", # inherit, 13%
       menuItem("Home", tabName = "Home", icon = icon("home")),
-#      menuItem("RFs in R", tabName = "Scripts_RFsR", icon = icon("code")),
       menuItem("Appliance energy predictions", tabName = "Scripts", icon = icon("code"),
           menuSubItem(" Data cleansing", tabName = "Scripts_Data_Cleansing", icon = icon("code")),
           menuSubItem(" Machine Learning", tabName = "Scripts_AllAlgorithmsR", icon = icon("r-project")),
