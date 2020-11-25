@@ -1,5 +1,6 @@
 
-server <- function(input,output){
+#server <- function(input,output){
+shinyServer(function(input, output) {
 
   output$Scripts_DCR_1 <- renderText({
       paste(
