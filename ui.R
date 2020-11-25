@@ -9,7 +9,6 @@ if (!require("data.table")) { install.packages("data.table", dependencies = TRUE
 if (!require("png")) { install.packages("png", dependencies = TRUE) ; library(png)}
 
 ui <- 
-
   dashboardPage(     skin = "blue",
     dashboardHeader(
       #style = "position:fixed;", # inherit, width:12%;
