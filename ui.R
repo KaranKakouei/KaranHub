@@ -8,8 +8,7 @@ if (!require("DT")) { install.packages("DT", dependencies = TRUE) ; library(DT)}
 if (!require("data.table")) { install.packages("data.table", dependencies = TRUE) ; library(data.table)}
 if (!require("png")) { install.packages("png", dependencies = TRUE) ; library(png)}
 
-#ui <- 
-shinyUI(
+ui <- 
 
 dashboardPage(     skin = "blue",
   dashboardHeader(
@@ -358,5 +357,4 @@ dashboardPage(     skin = "blue",
       )
     )
   )
-)
 )
