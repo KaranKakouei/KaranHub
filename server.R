@@ -1,19 +1,12 @@
 
-#if (!require("shiny")) { install.packages("shiny", dependencies = TRUE) ; library(shiny)}
-#if (!require("shinyjs")) { install.packages("shinyjs", dependencies = TRUE) ; library(shinyjs)}
-#if (!require("shinyWidgets")) { install.packages("shinyWidgets", dependencies = TRUE) ; library(shinyWidgets)}
-#if (!require("shinythemes")) { install.packages("shinythemes", dependencies = TRUE) ; library(shinythemes)}
-#if (!require("shinydashboard")) { install.packages("shinydashboard", dependencies = TRUE) ; library(shinydashboard)}
-#if (!require("DT")) { install.packages("DT", dependencies = TRUE) ; library(DT)}
-#if (!require("data.table")) { install.packages("data.table", dependencies = TRUE) ; library(data.table)}
-#if (!require("png")) { install.packages("png", dependencies = TRUE) ; library(png)}
-library(shiny)
-library(shinyWidgets)
-library(shinythemes)
-library(shinydashboard)
-library(DT)
-library(data.table)
-library(png)
+if (!require("shiny")) { install.packages("shiny", dependencies = TRUE) ; library(shiny)}
+if (!require("shinyjs")) { install.packages("shinyjs", dependencies = TRUE) ; library(shinyjs)}
+if (!require("shinyWidgets")) { install.packages("shinyWidgets", dependencies = TRUE) ; library(shinyWidgets)}
+if (!require("shinythemes")) { install.packages("shinythemes", dependencies = TRUE) ; library(shinythemes)}
+if (!require("shinydashboard")) { install.packages("shinydashboard", dependencies = TRUE) ; library(shinydashboard)}
+if (!require("DT")) { install.packages("DT", dependencies = TRUE) ; library(DT)}
+if (!require("data.table")) { install.packages("data.table", dependencies = TRUE) ; library(data.table)}
+if (!require("png")) { install.packages("png", dependencies = TRUE) ; library(png)}
 
 server <- function(input,output){
 
