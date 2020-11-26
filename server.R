@@ -9,7 +9,6 @@ if (!require("data.table")) { install.packages("data.table", dependencies = TRUE
 if (!require("png")) { install.packages("png", dependencies = TRUE) ; library(png)}
 
 server <- function(input,output){
-
   output$Scripts_DCR_1 <- renderText({
       paste(
       "if (!require('data.table')) { install.packages('data.table', dependencies = TRUE) ; library(data.table)} # Data manipulation",
