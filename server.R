@@ -996,8 +996,6 @@ server <- function(input,output){
   })
   # Here add the loss screenshots
 
-############################################
-
   output$code_ANNsPy_6 <- renderText({
     paste( 
     "# Save the results into your directory",
