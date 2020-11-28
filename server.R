@@ -304,8 +304,6 @@ server <- function(input,output){
       sep="\n")
   })
 
-###########################################################################################################################
-
   output$Scripts_DCPy_1 <- renderText({
     paste(
     "import numpy as np",
