@@ -478,8 +478,6 @@ server <- function(input,output){
     sep="\n")
   })
 
-###########################################################################################################################
-
   output$code_AllAlgorithmsR_1 <- renderText({
     paste( 
     "if (!require('data.table')) { install.packages('data.table', dependencies = TRUE) ; library(data.table)}", 
