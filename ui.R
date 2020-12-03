@@ -29,7 +29,7 @@ dashboardPage(skin = "blue",
     tags$script(HTML("$('body').addClass('fixed');")),
     tabItems(
       tabItem("Home",
-        fluidRow(
+         fluidRow(
           column(width = 1),
           column(width = 10, 
           p("About me", style = "padding-top: 10px; font-size: 30px; font-weight:bold;"),
@@ -56,7 +56,7 @@ dashboardPage(skin = "blue",
           p("R and Python scripts", style = "padding-top: 10px; font-size: 30px; font-weight:bold;"),
           p("If you are interested in the codes presented in this shiny app, please download thescripts under my ", tags$a(href="https://github.com/KaranKakouei/KaranHub/", "GitHub repository."), style= "text-align: justify; font-size: 18px;")
           )), column(width = 2)
-      ),
+      ), 
       tabItem("Scripts_Data_Cleansing",
         tabsetPanel(type = "tabs",
                     tabPanel("R",
@@ -82,7 +82,7 @@ dashboardPage(skin = "blue",
 
                         p("Data structure shows that date and some of our feature parameters are loaded as character, which prevent us to describe summary of the data such as mean value of feature parameters. 
                         So we convert the date into date format and all feature variables to integers.", style = "text-align: justify; padding-top: 10px; font-size: 18px;"),
-                        verbatimTextOutput("Scripts_DCR_5", placeholder = TRUE),
+                        verbatimTextOutput("Scripts_DCR_5", placeholder = TRUE)
 
                         p("If we check the data structures we can see that all columns are in the correct format now.", style = "text-align: justify; padding-top: 10px; font-size: 18px;"),
                         verbatimTextOutput("Scripts_DCR_6", placeholder = TRUE),
@@ -105,14 +105,12 @@ dashboardPage(skin = "blue",
                         we can see most of those features are highly co-correlated and show a very similar trend and a high variety of values.", style = "text-align: justify; padding-top: 10px; font-size: 18px;"),
                         verbatimTextOutput("Scripts_DCR_9", placeholder = TRUE),
                         tags$img(src = "DC_R_correlation_lines.png", width = "100%", style="text-align: center;"),
-                        # here put the correlation plots
 
                         p("Beyond the cocorrelated feature parameters, some of these parameters are relatively unimportant for appliances, so can be removed from the data set prior to regression modelling. 
                         To select which variables are unimpotant and deserve to be removed from the dataframe, we can run a random forest with 100 trees 
                         and assess the relative influence of all feature parameters on Appliances.", style = "text-align: justify; padding-top: 10px; font-size: 18px;"),
                         verbatimTextOutput("Scripts_DCR_10", placeholder = TRUE),
                         tags$img(src = "DC_R_VarImp.png", width = "100%", style="text-align: center;"),
-                        # here put the relative influence plot
 
                         p("The co-correlated parameters with least relative influence can also be removed from the data set. These parameters are: T_out, T7, and RH4.
                         Furthermore, least important feature parameters such as the two random variables of 'rv1' and 'rv2', and the 'Visibility' can also be removed from the data set.
@@ -124,7 +122,6 @@ dashboardPage(skin = "blue",
                         style = "text-align: justify; padding-top: 10px; font-size: 18px;"),
                         verbatimTextOutput("Scripts_DCR_12", placeholder = TRUE),
                         tags$img(src = "DC_R_Histogram.png", width = "100%", style="text-align: center;"),
-                        # here put the histogram (distribution plot)
                         p("We can see that all the columns follow normal distribution except T9, RH_6, and wind speed. The appliances is also left-skewed", 
                         style = "text-align: justify; padding-top: 10px; font-size: 18px;"),
 
@@ -143,7 +140,7 @@ dashboardPage(skin = "blue",
 
                         )), column(width = 2)
                     ),
-                    tabPanel("Python",
+                    tabPanel("Data cleansing in Python",
                       fluidRow(
                         column(width = 1),
                         column(width = 10,
@@ -153,61 +150,50 @@ dashboardPage(skin = "blue",
                         p("Load all necessary Python libraries:", style = "text-align: justify; padding-top: 10px; font-size: 18px;"),
                         verbatimTextOutput("Scripts_DCPy_1", placeholder = TRUE),
 
-                        p("Load your data set", style = "text-align: justify; padding-top: 10px; font-size: 18px;"),
+                        p("Load the data set, sort the columns alphabetically and explore the data by checking its structure, dimentions, 
+                        number of feature parameters, and observations' length.", style = "text-align: justify; padding-top: 10px; font-size: 18px;"),
                         verbatimTextOutput("Scripts_DCPy_2", placeholder = TRUE),
 
-                        p("First overview of the data. We first take a look at the dimentions of our dataframe to get information on the potential number of feature parameters and observations' length", style = "text-align: justify; font-size: 18px;"),
-                        verbatimTextOutput("Scripts_DCPy_3", placeholder = TRUE),
-
                         p("The dataframe has 19735 rows, which means enough data is available for for our ML algorithms. 
-                        So we have 29 columns, which include a date, a response (Appliances), and 27 feature parameters. 
-                        Now we alphabetically sort the columns and check data structure.", style = "text-align: justify; padding-top: 10px; font-size: 18px;"),
-                        verbatimTextOutput("Scripts_DCPy_4", placeholder = TRUE),
-
-                        p("Data structure shows that date and some of our feature parameters are loaded as character, which prevent us to describe summary of the data such as mean value of feature parameters. 
-                        So we convert the date into date format and all feature variables to integers.", style = "text-align: justify; padding-top: 10px; font-size: 18px;"),
-                        verbatimTextOutput("Scripts_DCPy_5", placeholder = TRUE),
-
-                        p("If we check the data structures we can see that all columns are in the correct format now.", style = "text-align: justify; padding-top: 10px; font-size: 18px;"),
-                        verbatimTextOutput("Scripts_DCPy_6", placeholder = TRUE),
-
-                        p("Now we check whether each column includes incomplete values or NULLs, 
-                        and find potential dulicates or the number of NAs per column. We then get the summary of each column for a more detailed overview of values per feature parameter.", style = "text-align: justify; padding-top: 10px; font-size: 18px;"),
-                        verbatimTextOutput("Scripts_DCPy_7", placeholder = TRUE),
+                        So we have 29 columns, which include a date, a response (Appliances), and 27 feature parameters.",
+                        style = "text-align: justify; padding-top: 10px; font-size: 18px;"),
+                        p("Now we check whether each column includes incomplete values or NULLs, and find potential dulicates or 
+                        the number of NAs per column.", 
+                        style = "text-align: justify; padding-top: 10px; font-size: 18px;"),
+                        verbatimTextOutput("Scripts_DCPy_3", placeholder = TRUE),
 
                         p("So there is no NULLs, missing values, or duplicates in the dataframe!", style = "text-align: justify; padding-top: 10px; font-size: 18px;"),
                         p("", style = "font-size: 18px;"),
                         p("Feature parameters", style = "text-align: justify; font-size: 20px; font-weight:bold;"),
                         p("The number of feature parameters is rather large for such a dataset, so we should reduce them to prevent overfitting in our regression models.
                         First we can check for correlation between our features, and visualize data as a heatmap.", style = "ptext-align: justify; adding-top: 10px; font-size: 18px;"),
-                        verbatimTextOutput("Scripts_DCPy_8", placeholder = TRUE),
+                        verbatimTextOutput("Scripts_DCPy_4", placeholder = TRUE),
                         tags$img(src = "DC_Py_Heatmap.png", width = "100%", style="text-align: center;"),
 
-                        p("A couple of feature parameters are highly co-correlated (|r| > 0.9). Examples are: T6 vs. T_out, T9 vs. T3/T5/T7, RH3 vs. RH4.
+                        p("A couple of feature parameters are highly co-correlated (|r| > 0.9). Examples are: T6 vs. T_out, T9 vs. T3/T5/T7, RH3 vs. RH4. 
                         Either of these feature parameters can equally explain the variability in the response variable (i.e., Appliances), 
-                        but we need to decide wich one to remove. We further visualizea the co-corelated feature parameters to confirm and deal with them. In this figure, 
+                        but we need to decide wich one to remove. We further visualize the co-corelated feature parameters to confirm and deal with them. In this figure, 
                         we can see most of those features are highly co-correlated and show a very similar trend and a high variety of values.", style = "text-align: justify; padding-top: 10px; font-size: 18px;"),
-                        verbatimTextOutput("Scripts_DCPy_9", placeholder = TRUE),
-                        tags$img(src = "DC_Py_correlation_lines.png", width = "80%"),
+                        verbatimTextOutput("Scripts_DCPy_5", placeholder = TRUE),
+                        tags$img(src = "DC_Py_correlation_lines.png", width = "100%", style="text-align: center;"),
 
                         p("Beyond the cocorrelated feature parameters, some of these parameters are relatively unimportant for appliances, so can be removed from the data set prior to regression modelling. 
                         To select which variables are unimpotant and deserve to be removed from the dataframe, we can run a random forest with 100 trees 
                         and assess the relative influence of all feature parameters on Appliances.", style = "text-align: justify; padding-top: 10px; font-size: 18px;"),
-                        verbatimTextOutput("Scripts_DCPy_10", placeholder = TRUE),
+                        verbatimTextOutput("Scripts_DCPy_6", placeholder = TRUE),
                         tags$img(src = "DC_Py_VarImp.png", width = "100%", style="text-align: center;"),
 
                         p("The co-correlated parameters with least relative influence can also be removed from the data set. These parameters are: T_out, T7, and RH4.
                         Furthermore, least important feature parameters such as the two random variables of 'rv1' and 'rv2', and the 'Visibility' can also be removed from the data set.
-                        'Lights' has also lots of null values which can be removed too. After removing these variables we come up with a total number of 21 feature parameters", 
+                        'Lights' has also lots of zero values which can be removed too. After removing these variables we come up with a total number of 21 feature parameters.", 
                         style = "text-align: justify; padding-top: 10px; font-size: 18px;"),
-                        verbatimTextOutput("Scripts_DCPy_11", placeholder = TRUE),
+                        verbatimTextOutput("Scripts_DCPy_7", placeholder = TRUE),
 
-                        p("Now we check the distribution of the appliances and all features", 
+                        p("Now we check the distribution of the appliances and all features:", 
                         style = "text-align: justify; padding-top: 10px; font-size: 18px;"),
-                        verbatimTextOutput("Scripts_DCPy_12", placeholder = TRUE),
-                        tags$img(src = "DC_Py_Histogram.png", width = "100%", style="text-align: center;"),
-                        # here put the histogram (distribution plot)
-                        p("We can see that all the columns follow normal distribution except T9, RH_6, and wind speed. The appliances is also left-skewed", 
+                        verbatimTextOutput("Scripts_DCPy_8", placeholder = TRUE),
+                        tags$img(src = "DC_Py_Distribution.png", width = "100%", style="text-align: center;"),
+                        p("We can see that all the columns follow normal distribution except T9, RH_6, and wind speed. The appliances is also left-skewed.", 
                         style = "text-align: justify; padding-top: 10px; font-size: 18px;"),
 
                         p("As the data was recorded at different times of the day or days of a week, and energy consumption (i.e. appliances) 
@@ -218,14 +204,14 @@ dashboardPage(skin = "blue",
                         Before fitting our selected features to the models, we need to normalize our feature parameters. 
                         Data normalization (here min-max scaling) enables us the opportunity to assess their relative 
                         influences on appliances without s judged by their relatively small or large values", style = "text-align: justify; padding-top: 10px; font-size: 18px;"),
-                        verbatimTextOutput("Scripts_DCPy_13", placeholder = TRUE),
-                        
+                        verbatimTextOutput("Scripts_DCPy_9", placeholder = TRUE),
+
                         p("", style = "padding-top: 10px; font-size: 30px; font-weight:bold;"),
                         p("", style = "padding-top: 10px; font-size: 30px; font-weight:bold;")
 
                         )), column(width = 2)
                     )
-        )
+         )
       ),
       tabItem("Scripts_AllAlgorithmsR",
         fluidRow(
@@ -290,14 +276,14 @@ dashboardPage(skin = "blue",
           p("R and python model performances", style = "padding-top: 10px; font-size: 30px; font-weight:bold;"),
           p("The 10-fold cross-validation results show that the python models outperformed R models. This might be resulted from 
           model structures that varies across the platforms.", style = "text-align: justify; font-size: 18px;"),
-          tags$img(src = "DV_R_Py_Final_comparisons.png", width = "80%"),
+          tags$img(src = "DV_R_Py_Final_comparisons.png", width = "100%", style="text-align: center;"),
 
-          p("xx was worst performing model with an R_score of 0.xx and median absolute error (MedAE) of xx. In contrast, 
-          the two algorithms of Extra Trees Regression (R_score: 0.57, MedAE: xx) and Random Forests (R_score: 0.57, MedAE: xx) outperformed all other algorithms. 
-          However, this does not mean thet deep learning and artificial neural networks (ANNs) are less powerfull than these algorithms. We ca 
-          build complex ANNs that can perform as good as other powerful algorithms. In the next step, I show how we can build complex ANN models 
-          without being prone to overfitting. You can find the ANN scripts under the 'Deep Learning' tab in the side bar.      
-          ", style = "text-align: justify; padding-top: 10px; font-size: 18px;"),
+          p("SVR in Python and ANN in R were the worst performing models with R scores of 0.02 and 0.05, and median absolute errors (MedAE) of 13.3 and 50.5, respectively. 
+          In contrast, the two algorithms of Extra Trees Regression (R scores: 0.62 in python and 0.56 in R) and Random Forests (R scores: 0.58 in python and 0.54 in R)
+          outperformed all other algorithms. However, this does not mean that other tools such as Deep Learning (ANNs) are less powerfull than the other algorithms. In the next step, 
+          we build complex ANNs that can perform as good as Random Forest and Extra Trees Regression algorithms, without being prone to overfitting. 
+          You can find the ANN scripts under the 'Deep Learning' tab in the side bar.      
+          ", style = "text-align: justify; padding-top: 20px; font-size: 18px;"),
 
           p("", style = "padding-top: 10px; font-size: 30px; font-weight:bold;"),
           p("", style = "padding-top: 10px; font-size: 30px; font-weight:bold;")
@@ -324,17 +310,22 @@ dashboardPage(skin = "blue",
 
           p("To track loss values online, you should follw the following steps:", style = "text-align: justify; padding-top: 10px; font-size: 18px;"),
           verbatimTextOutput("code_ANNsPy_4", placeholder = TRUE),
-          tags$img(src = "Split_8.png", width = "80%"),
+          tags$img(src = "ANNs_loss_val-los_tensorboard.png", width = "100%", style="text-align: center;"),
 
           p("The evaluation results show that the appliances energy consumption can also be predicted using the Artificial Neural Networks as good as Random Forest and 
           Extra Trees regression algorithms. The performance of ANNs will become better once changing the model structure by adapting the number of hidden layers and neurons. 
-          You can see model performances improve while increasing the number of hiden layers and neurons in the figure below:", 
-          style = "text-align: justify; padding-top: 10px; font-size: 18px;"),
+          In the figure below, we can see that the model performances relatively improved while increasing the number of hidden layers and neurons.", 
+          style = "text-align: justify; padding-top: 20px; font-size: 18px;"),
           tags$img(src = "ANNs_Final_comparisons.png", width = "100%", style="text-align: center;"),
 
-          p("To sum up, we need to take care of potential overfitting problems once increasing ANN model complexity. In my code, I have just 
-          skipped a model if it was performing worse than any previous models, and in case of overfitting, the model was neither saved in the 
-          directory nor evaluated for our final results shown in the figure above.", 
+          p("", style = "padding-top: 10px; font-size: 30px; font-weight:bold;"),
+
+          p("The figure shows that the model with 4096 neurons and 5 hidden layers outperformed all other models, even those with larger number of neurons or hidden layers.
+          This means that increasing the number neurons or hidden layers depend on many factors such as length of the time-series that need to be taken into acount. Furthermore,
+          we need to take care of potential overfitting problems once increasing ANN model complexity. In my code, I have just skipped a model if it was performing worse than 
+          any previous models, and in case of overfitting, the model was neither saved in the directory nor evaluated for our final results shown in the figure above.
+          To avoid overfitted models, we might test which combinations result in a better R score or lesser median absolute error. This is possible if you apply the above-written  
+          loop on your data. I wish you much success!", 
           style = "text-align: justify; padding-top: 10px; font-size: 18px;"),
 
           p("", style = "padding-top: 10px; font-size: 30px; font-weight:bold;"),
