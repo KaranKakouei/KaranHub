@@ -14,8 +14,9 @@ dashboardPage(skin = "blue",
     title = tags$a(href="https://github.com/KaranKakouei/KaranHub/", icon("github"), "KaranHub", style = "color: white; font-size: 24px;"),
     tags$li(a(href = 'https://github.com/KaranKakouei/KaranHub/', icon("github"), title = "Back to Apps Hub"), class = "dropdown", style = "size: 20px;margin-right:10px;")),
   dashboardSidebar(
+    tags$style(HTML(".main-sidebar{width: 250px;}")),
     sidebarMenu(
-      style = "position:fixed; width:12%;", 
+      style = "position:fixed; width: 250px;", 
       menuItem("Home", tabName = "Home", icon = icon("home")),
       menuItem("Appliance energy predictions", tabName = "Scripts", icon = icon("code"),
           menuSubItem(" Data cleansing", tabName = "Scripts_Data_Cleansing", icon = icon("code")),
