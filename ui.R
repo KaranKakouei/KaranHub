@@ -40,10 +40,10 @@ ui <-
             professional development.", style= "text-align: justify; font-size: 18px;"),
 
             p("For the last seven years, I have been working at the Leibniz-Institute of Freshwater Ecology and Inland Fisheries where I have been responsible 
-            for analysis of big data using machine and deep learning tools to assess predictive power of featureparameters or influencing factors and define the 
-            potential future scopes with implications for environmental management. I have also been responsible for contributing to talking about data and 
-            thriving on explaining the meaning of data by providing easily interpretable outcomes (e.g., interactive dashboards, reports and deliverables) for 
-            either my fellow colleagues or managers and non-technical stakeholders.", style= "text-align: justify; font-size: 18px;"),
+            for analysis of big data using Machine and Deep Learning tools to assess predictive power of featureparameters or influencing factors and predict the 
+            potential future scopes of inland waters with implications for environmental management. I have also been responsible for contributing to talking about 
+            data and thriving on explaining the meaning of data by providing easily interpretable outcomes (e.g., interactive dashboards, reports and deliverables) 
+            for either my fellow colleagues or managers and non-technical stakeholders.", style= "text-align: justify; font-size: 18px;"),
 
             p("I have the initiative, enthusiasm and willingness to learn new skills and keep abreast of and promote new developments in the appropriate 
             professional field. Thanks to my migration background and my experience of studying and working in different countries (Iran, The Netherlands 
@@ -51,7 +51,7 @@ ui <-
             I really enjoy.", style= "text-align: justify; font-size: 18px;"),
 
             p("Here I work on a variety of kaggle competitions and would like to distribute my competitive solutions, so people might come up with potential 
-            ways of solving real-life tasks. The good news is that I anounce my solutions in both R and python environments. Yaaaay!", 
+            ways of solving real-life tasks. The good news is that I anounce my solutions in both R and Python environments. Yaaaay!", 
             style= "text-align: justify; font-size: 18px;"),
 
             p("Data", style = "padding-top: 10px; font-size: 30px; font-weight:bold;"),
