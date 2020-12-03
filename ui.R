@@ -9,7 +9,7 @@ if (!require("data.table")) { install.packages("data.table", dependencies = TRUE
 if (!require("png")) { install.packages("png", dependencies = TRUE) ; library(png)}
 
 ui <- 
- dashboardPage(     skin = "blue",
+dashboardPage(     skin = "blue",
     dashboardHeader(
       #style = "position:fixed;", # inherit, width:12%;
       title = tags$a(href="https://github.com/KaranKakouei/KaranHub/", icon("github"), "KaranHub", style = "color: white; font-size: 24px;"),
@@ -356,4 +356,4 @@ ui <-
             )), column(width = 2)
         )
     )
- )
+)
