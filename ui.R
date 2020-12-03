@@ -65,7 +65,7 @@ ui <-
             data was averaged for 10 minutes periods. The energy data was logged every 10 minutes with m-bus energy meters. Weather from the nearest airport 
             weather station (Chievres Airport, Belgium) was downloaded from a public data set from Reliable Prognosis (rp5.ru), and merged together with the 
             experimental data sets using the date and time column. Two random variables have been included in the data set for testing the regression models 
-            and to filter out non predictive attributes (parameters).  You can download the data ", tags$a(href="https://www.kaggle.com/loveall/appliances-energy-prediction", "here on Kaggle."), 
+            and to filter out non predictive attributes (parameters).  You can download the data ", tags$a(href="https://www.kaggle.com/loveall/appliances-energy-prediction", "here on Kaggle.", class = "tab-pane"), 
             style= "text-align: justify; font-size: 18px;"),
 
             p("To follow the whole pipeline from preprocessing of data to the visualization of the results, I prepared an interractive shiny web application 
