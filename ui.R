@@ -9,18 +9,14 @@ if (!require("data.table")) { install.packages("data.table", dependencies = TRUE
 if (!require("png")) { install.packages("png", dependencies = TRUE) ; library(png)}
 
 ui <- 
-dashboardPage(     skin = "blue", # theme = shinytheme("cosmo"),
+dashboardPage(skin = "blue",
   dashboardHeader(
-    #style = "position:fixed;", # inherit, width:12%;
     title = tags$a(href="https://github.com/KaranKakouei/KaranHub/", icon("github"), "KaranHub", style = "color: white; font-size: 24px;"),
     tags$li(a(href = 'https://github.com/KaranKakouei/KaranHub/', icon("github"), title = "Back to Apps Hub"), class = "dropdown", style = "size: 20px;margin-right:10px;")),
   dashboardSidebar(
-    #tags$style(HTML(".main-sidebar{width: 250px;}")),
-#    tags$head(tags$style(HTML('.main-sidebar{width: 300px;}.main-header>.navbar{margin-left: 300px;}.main-header.logo{width: 300px;}.content-wrapper, .main-footer, .right-side{margin-left: 300px;}'))),
     sidebarMenu(
-      style = "position:fixed; width:14%;", # inherit
+      style = "position:fixed; width:12%;", 
       menuItem("Home", tabName = "Home", icon = icon("home")),
-#      menuItem("RFs in R", tabName = "Scripts_RFsR", icon = icon("code")),
       menuItem("Appliance energy predictions", tabName = "Scripts", icon = icon("code"),
           menuSubItem(" Data cleansing", tabName = "Scripts_Data_Cleansing", icon = icon("code")),
           menuSubItem(" Machine Learning", tabName = "Scripts_AllAlgorithmsR", icon = icon("r-project")),
@@ -61,7 +57,6 @@ dashboardPage(     skin = "blue", # theme = shinytheme("cosmo"),
           )), column(width = 2)
       ),
       tabItem("Scripts_Data_Cleansing",
-        # Output: Tabset w/ plot, summary, and table ----
         tabsetPanel(type = "tabs",
                     tabPanel("R",
                       fluidRow(
@@ -186,23 +181,20 @@ dashboardPage(     skin = "blue", # theme = shinytheme("cosmo"),
                         p("The number of feature parameters is rather large for such a dataset, so we should reduce them to prevent overfitting in our regression models.
                         First we can check for correlation between our features, and visualize data as a heatmap.", style = "ptext-align: justify; adding-top: 10px; font-size: 18px;"),
                         verbatimTextOutput("Scripts_DCPy_8", placeholder = TRUE),
-                        tags$img(src = "DC_Py_Heatmap.png", width = "30%"),
-                        # here put the heatmap
+                        tags$img(src = "DC_Py_Heatmap.png", width = "80%"),
 
                         p("A couple of feature parameters are highly co-correlated (|r| > 0.9). Examples are: T6 vs. T_out, T9 vs. T3/T5/T7, RH3 vs. RH4.
                         Either of these feature parameters can equally explain the variability in the response variable (i.e., Appliances), 
                         but we need to decide wich one to remove. We further visualizea the co-corelated feature parameters to confirm and deal with them. In this figure, 
                         we can see most of those features are highly co-correlated and show a very similar trend and a high variety of values.", style = "text-align: justify; padding-top: 10px; font-size: 18px;"),
                         verbatimTextOutput("Scripts_DCPy_9", placeholder = TRUE),
-                        tags$img(src = "DC_Py_correlation_lines.png", width = "30%"),
-                        # here put the correlation plots
+                        tags$img(src = "DC_Py_correlation_lines.png", width = "80%"),
 
                         p("Beyond the cocorrelated feature parameters, some of these parameters are relatively unimportant for appliances, so can be removed from the data set prior to regression modelling. 
                         To select which variables are unimpotant and deserve to be removed from the dataframe, we can run a random forest with 100 trees 
                         and assess the relative influence of all feature parameters on Appliances.", style = "text-align: justify; padding-top: 10px; font-size: 18px;"),
                         verbatimTextOutput("Scripts_DCPy_10", placeholder = TRUE),
-                        tags$img(src = "DC_Py_VarImp.png", width = "30%"),
-                        # here put the relative influence plot
+                        tags$img(src = "DC_Py_VarImp.png", width = "80%"),
 
                         p("The co-correlated parameters with least relative influence can also be removed from the data set. These parameters are: T_out, T7, and RH4.
                         Furthermore, least important feature parameters such as the two random variables of 'rv1' and 'rv2', and the 'Visibility' can also be removed from the data set.
@@ -213,7 +205,7 @@ dashboardPage(     skin = "blue", # theme = shinytheme("cosmo"),
                         p("Now we check the distribution of the appliances and all features", 
                         style = "text-align: justify; padding-top: 10px; font-size: 18px;"),
                         verbatimTextOutput("Scripts_DCPy_12", placeholder = TRUE),
-                        tags$img(src = "DC_Py_Histogram.png", width = "30%"),
+                        tags$img(src = "DC_Py_Histogram.png", width = "80%"),
                         # here put the histogram (distribution plot)
                         p("We can see that all the columns follow normal distribution except T9, RH_6, and wind speed. The appliances is also left-skewed", 
                         style = "text-align: justify; padding-top: 10px; font-size: 18px;"),
@@ -281,8 +273,6 @@ dashboardPage(     skin = "blue", # theme = shinytheme("cosmo"),
           verbatimTextOutput("code_AllAlgorithmsPy_2", placeholder = TRUE),
 
           p("Print data column names for the next step to assemble features.", style = "text-align: justify; padding-top: 10px; font-size: 18px;"),
-          #p("Transfer dataframe to array and check output's schema. Then select the final data (i.e., your response variable and 
-          #feature parameters) to be used in the subsequent ML steps", style = "padding-top: 10px; font-size: 18px;"),
           verbatimTextOutput("code_AllAlgorithmsPy_3", placeholder = TRUE),
 
           p("Run a loop over the data to split the data for 10-fold cross-validation and apply RF algorithm on each split:", style = "text-align: justify; padding-top: 10px; font-size: 18px;"),
@@ -300,8 +290,7 @@ dashboardPage(     skin = "blue", # theme = shinytheme("cosmo"),
           p("R and python model performances", style = "padding-top: 10px; font-size: 30px; font-weight:bold;"),
           p("The 10-fold cross-validation results show that the python models outperformed R models. This might be resulted from 
           model structures that varies across the platforms.", style = "text-align: justify; font-size: 18px;"),
-          tags$img(src = "DV_R_Py_Final_comparisons.png", width = "30%"),
-          # Here add cross-validation results
+          tags$img(src = "DV_R_Py_Final_comparisons.png", width = "80%"),
 
           p("xx was worst performing model with an R_score of 0.xx and median absolute error (MedAE) of xx. In contrast, 
           the two algorithms of Extra Trees Regression (R_score: 0.57, MedAE: xx) and Random Forests (R_score: 0.57, MedAE: xx) outperformed all other algorithms. 
@@ -335,8 +324,7 @@ dashboardPage(     skin = "blue", # theme = shinytheme("cosmo"),
 
           p("To track loss values online, you should follw the following steps:", style = "text-align: justify; padding-top: 10px; font-size: 18px;"),
           verbatimTextOutput("code_ANNsPy_4", placeholder = TRUE),
-          tags$img(src = "Split_8.png", width = "30%"),
-          # Here add the loss screenshots
+          tags$img(src = "Split_8.png", width = "80%"),
 
           p("The evaluation results show that the appliances energy consumption can also be predicted using the Artificial Neural Networks as good as Random Forest and 
           Extra Trees regression algorithms. The performance of ANNs will become better once changing the model structure by adapting the number of hidden layers and neurons. 
