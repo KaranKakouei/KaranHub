@@ -13,5 +13,10 @@ The first project I am working on is the "Appliances Energy Use AEU". The AEU in
 To follow the whole pipeline from preprocessing of data to the visualization of the results, I prepared an interractive shiny web application which includes all the scripts and visualized outcomes. I will update this read me file as well as the dashboard once I have solutions for further projects. Enjoy scrolling through the interractive dashboard!
 
 You may download the repository and run the app in R/RStudio on your local system, or run the following commands in either Terminal or R console:
-Terminal: runGitHub('KaranHub','KaranKakouei')
-R-console: shiny::runGitHub('KaranHub','KaranKakouei')
+```
+# Terminal: 
+runGitHub('KaranHub','KaranKakouei')
+
+# R-console: 
+shiny::runGitHub('KaranHub','KaranKakouei')
+```
