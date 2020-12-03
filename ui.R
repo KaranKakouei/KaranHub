@@ -96,22 +96,21 @@ dashboardPage(skin = "blue",
                         p("The number of feature parameters is rather large for such a dataset, so we should reduce them to prevent overfitting in our regression models.
                         First we can check for correlation between our features, and visualize data as a heatmap.", style = "ptext-align: justify; adding-top: 10px; font-size: 18px;"),
                         verbatimTextOutput("Scripts_DCR_8", placeholder = TRUE),
-                        tags$img(src = "DC_R_Heatmap.png", width = "30%"),
-                        # here put the heatmap
+                        tags$img(src = "DC_R_Heatmap.png", width = "100%", style="text-align: center;"),
 
                         p("A couple of feature parameters are highly co-correlated (|r| > 0.9). Examples are: T6 vs. T_out, T9 vs. T3/T5/T7, RH3 vs. RH4.
                         Either of these feature parameters can equally explain the variability in the response variable (i.e., Appliances), 
                         but we need to decide wich one to remove. We further visualizea the co-corelated feature parameters to confirm and deal with them. In this figure, 
                         we can see most of those features are highly co-correlated and show a very similar trend and a high variety of values.", style = "text-align: justify; padding-top: 10px; font-size: 18px;"),
                         verbatimTextOutput("Scripts_DCR_9", placeholder = TRUE),
-                        tags$img(src = "DC_R_correlation_lines.png", width = "30%"),
+                        tags$img(src = "DC_R_correlation_lines.png", width = "100%", style="text-align: center;"),
                         # here put the correlation plots
 
                         p("Beyond the cocorrelated feature parameters, some of these parameters are relatively unimportant for appliances, so can be removed from the data set prior to regression modelling. 
                         To select which variables are unimpotant and deserve to be removed from the dataframe, we can run a random forest with 100 trees 
                         and assess the relative influence of all feature parameters on Appliances.", style = "text-align: justify; padding-top: 10px; font-size: 18px;"),
                         verbatimTextOutput("Scripts_DCR_10", placeholder = TRUE),
-                        tags$img(src = "DC_R_VarImp.png", width = "30%"),
+                        tags$img(src = "DC_R_VarImp.png", width = "100%", style="text-align: center;"),
                         # here put the relative influence plot
 
                         p("The co-correlated parameters with least relative influence can also be removed from the data set. These parameters are: T_out, T7, and RH4.
@@ -123,7 +122,7 @@ dashboardPage(skin = "blue",
                         p("Now we check the distribution of the appliances and all features", 
                         style = "text-align: justify; padding-top: 10px; font-size: 18px;"),
                         verbatimTextOutput("Scripts_DCR_12", placeholder = TRUE),
-                        tags$img(src = "DC_R_Histogram.png", width = "30%"),
+                        tags$img(src = "DC_R_Histogram.png", width = "100%", style="text-align: center;"),
                         # here put the histogram (distribution plot)
                         p("We can see that all the columns follow normal distribution except T9, RH_6, and wind speed. The appliances is also left-skewed", 
                         style = "text-align: justify; padding-top: 10px; font-size: 18px;"),
@@ -181,7 +180,7 @@ dashboardPage(skin = "blue",
                         p("The number of feature parameters is rather large for such a dataset, so we should reduce them to prevent overfitting in our regression models.
                         First we can check for correlation between our features, and visualize data as a heatmap.", style = "ptext-align: justify; adding-top: 10px; font-size: 18px;"),
                         verbatimTextOutput("Scripts_DCPy_8", placeholder = TRUE),
-                        tags$img(src = "DC_Py_Heatmap.png", width = "80%"),
+                        tags$img(src = "DC_Py_Heatmap.png", width = "100%", style="text-align: center;"),
 
                         p("A couple of feature parameters are highly co-correlated (|r| > 0.9). Examples are: T6 vs. T_out, T9 vs. T3/T5/T7, RH3 vs. RH4.
                         Either of these feature parameters can equally explain the variability in the response variable (i.e., Appliances), 
@@ -194,7 +193,7 @@ dashboardPage(skin = "blue",
                         To select which variables are unimpotant and deserve to be removed from the dataframe, we can run a random forest with 100 trees 
                         and assess the relative influence of all feature parameters on Appliances.", style = "text-align: justify; padding-top: 10px; font-size: 18px;"),
                         verbatimTextOutput("Scripts_DCPy_10", placeholder = TRUE),
-                        tags$img(src = "DC_Py_VarImp.png", width = "80%"),
+                        tags$img(src = "DC_Py_VarImp.png", width = "100%", style="text-align: center;"),
 
                         p("The co-correlated parameters with least relative influence can also be removed from the data set. These parameters are: T_out, T7, and RH4.
                         Furthermore, least important feature parameters such as the two random variables of 'rv1' and 'rv2', and the 'Visibility' can also be removed from the data set.
@@ -205,7 +204,7 @@ dashboardPage(skin = "blue",
                         p("Now we check the distribution of the appliances and all features", 
                         style = "text-align: justify; padding-top: 10px; font-size: 18px;"),
                         verbatimTextOutput("Scripts_DCPy_12", placeholder = TRUE),
-                        tags$img(src = "DC_Py_Histogram.png", width = "80%"),
+                        tags$img(src = "DC_Py_Histogram.png", width = "100%", style="text-align: center;"),
                         # here put the histogram (distribution plot)
                         p("We can see that all the columns follow normal distribution except T9, RH_6, and wind speed. The appliances is also left-skewed", 
                         style = "text-align: justify; padding-top: 10px; font-size: 18px;"),
@@ -330,8 +329,7 @@ dashboardPage(skin = "blue",
           Extra Trees regression algorithms. The performance of ANNs will become better once changing the model structure by adapting the number of hidden layers and neurons. 
           You can see model performances improve while increasing the number of hiden layers and neurons in the figure below:", 
           style = "text-align: justify; padding-top: 10px; font-size: 18px;"),
-          tags$img(src = "ANNs_Final_comparisons.png", width = "30%"),
-          # here put the bar plot of model evaluation progress with different dense and hiden layers
+          tags$img(src = "ANNs_Final_comparisons.png", width = "100%", style="text-align: center;"),
 
           p("To sum up, we need to take care of potential overfitting problems once increasing ANN model complexity. In my code, I have just 
           skipped a model if it was performing worse than any previous models, and in case of overfitting, the model was neither saved in the 
