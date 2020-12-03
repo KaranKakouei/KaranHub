@@ -56,7 +56,7 @@ ui <-
 
             p("Data", style = "padding-top: 10px; font-size: 30px; font-weight:bold;"),
 
-            p("Appliances energy prediction", style = "font-size: 20px; ; font-style: italic; font-weight:bold;"),
+            p("Appliances energy prediction", style = "font-size: 20px; font-style: italic; font-weight:bold;"),
 
             p("The first project I am working on is the Appliances Energy Use (AEU). The AEU includes high resolution data that is recorded at 10-minute 
             frequencies for roughly 4.5 months. The recorded feature parameters are temperature (11 parameters), relative humidity (10 parameters), lights, 
