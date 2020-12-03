@@ -70,7 +70,7 @@ ui <-
 
             p("To follow the whole pipeline from preprocessing of data to the visualization of the results, I prepared an interractive shiny web application 
             which includes all the scripts and visualized outcomes. I will update this read me file as well as the dashboard once I have solutions for further 
-            projects. Enjoy scrolling through the interractive dashboard!"), style= "text-align: justify; font-size: 18px;")
+            projects. Enjoy scrolling through the interractive dashboard!"), style= "text-align: justify; font-size: 18px;"),
 
             p("R and Python scripts", style = "padding-top: 10px; font-size: 30px; font-weight:bold;"),
             p("If you are interested in the codes presented in this shiny app, please download thescripts under my ", tags$a(href="https://github.com/KaranKakouei/KaranHub/", "GitHub repository."), style= "text-align: justify; font-size: 18px;")
