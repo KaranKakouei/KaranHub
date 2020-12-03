@@ -82,7 +82,7 @@ dashboardPage(skin = "blue",
 
                         p("Data structure shows that date and some of our feature parameters are loaded as character, which prevent us to describe summary of the data such as mean value of feature parameters. 
                         So we convert the date into date format and all feature variables to integers.", style = "text-align: justify; padding-top: 10px; font-size: 18px;"),
-                        verbatimTextOutput("Scripts_DCR_5", placeholder = TRUE)
+                        verbatimTextOutput("Scripts_DCR_5", placeholder = TRUE),
 
                         p("If we check the data structures we can see that all columns are in the correct format now.", style = "text-align: justify; padding-top: 10px; font-size: 18px;"),
                         verbatimTextOutput("Scripts_DCR_6", placeholder = TRUE),
