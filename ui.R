@@ -74,7 +74,7 @@ ui <-
             projects. Enjoy scrolling through the interractive dashboard!"), style= "text-align: justify; font-size: 18px;"),
 
             p("R and Python scripts", style = "padding-top: 10px; font-size: 30px; font-weight:bold;"),
-            p("If you are interested in the codes presented in this shiny app, please download thescripts under my ", tags$a(href="https://github.com/KaranKakouei/KaranHub/", "GitHub repository."), style= "text-align: justify; font-size: 18px;")
+            p("If you are interested in the codes presented in this Shiny app, please download the scripts under my ", tags$a(href="https://github.com/KaranKakouei/KaranHub/", "GitHub repository."), style= "text-align: justify; font-size: 18px;")
             )), column(width = 2)
         ), 
         tabItem("Scripts_Data_Cleansing",
