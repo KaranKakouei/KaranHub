@@ -34,6 +34,7 @@ ui <-
             column(width = 1),
             column(width = 10, 
             p("About me", style = "padding-top: 10px; font-size: 30px; font-weight:bold;"),
+
             p("I am a motivated, team-work oriented, and responsible Data Scientist and Water Manager with seven years of practical experience in Machine 
             Learning and predictive modeling of complex data, which includes handling the whole pipeline from preprocessing of data tothe visualization of results. 
             I am highly proficient in SQL and in programming languages such as R and Python, and have an open mind-set and a commitment to continuous learning and 
