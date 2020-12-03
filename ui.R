@@ -58,7 +58,7 @@ ui <-
 
             p("Appliances energy prediction", style = "font-size: 20px; ; font-style: italic; font-weight:bold;"),
 
-            p("The first project I am working on is the 'Appliances Energy Use AEU'. The AEU includes high resolution data that is recorded at 10-minute 
+            p("The first project I am working on is the 'Appliances Energy Use (AEU)'. The AEU includes high resolution data that is recorded at 10-minute 
             frequencies for roughly 4.5 months. The recorded feature parameters are temperature (11 parameters), relative humidity (10 parameters), lights, 
             wind speed, precipitation, and visibility. According to the project descriptions, the house temperature and humidity conditions were monitored 
             with a ZigBee wireless sensor network. Each wireless node transmitted the temperature and humidity conditions around 3.3 min. Then, the wireless 
@@ -75,7 +75,7 @@ ui <-
             p("R and Python scripts", style = "padding-top: 10px; font-size: 30px; font-weight:bold;"),
             p("If you are interested in the codes presented in this shiny app, please download thescripts under my ", tags$a(href="https://github.com/KaranKakouei/KaranHub/", "GitHub repository."), style= "text-align: justify; font-size: 18px;")
             )), column(width = 2)
-        ),
+        ), 
         tabItem("Scripts_Data_Cleansing",
           tabsetPanel(type = "tabs",
                       tabPanel("Data cleansing in R",
