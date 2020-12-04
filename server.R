@@ -677,7 +677,7 @@ server <- function(input,output){
 
   output$code_AllAlgorithmsPy_2 <- renderText({
     paste(
-    "df = pd.read_csv('/media/kakouei/data/KaranHub/Kaggle/Appliances_energy_prediction/KAG_energy_data_cleaned_scaled.csv')",
+    "df = pd.read_csv('/Your_Directory/KAG_energy_data_cleaned_scaled.csv')",
     "df = df.drop('date', axis = 1)",
     "df.columns",
     "",
