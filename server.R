@@ -749,7 +749,6 @@ server <- function(input,output){
     "   # Mean absolute error",
     "   rfs_mae = metrics.mean_absolute_error(test_y, rfs.predict(test_X))",
     "   brt_mae = metrics.mean_absolute_error(test_y, brt.predict(test_X))",
-    "",
     "   knn_mae = metrics.mean_absolute_error(test_y, knn.predict(test_X))",
     "   svr_mae = metrics.mean_absolute_error(test_y, svr.predict(test_X))",
     "   et_mae = metrics.mean_absolute_error(test_y, et.predict(test_X))",
