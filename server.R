@@ -40,7 +40,7 @@ server <- function(input,output){
       " [1] 19735    29",
       sep="\n")
   })
-
+ 
   output$Scripts_DCR_4 <- renderText({
       paste(
       "df <- df[,order(colnames(df))]",
@@ -239,7 +239,6 @@ server <- function(input,output){
       "    theme_bw()",
       sep="\n")
   })
-  # here put the correlation plot
 
   output$Scripts_DCR_10 <- renderText({
       paste(
@@ -646,7 +645,7 @@ server <- function(input,output){
     sep="\n")
   })
 
-###########################################################################################################################
+#########################################################################################################################
 
   output$code_AllAlgorithmsPy_1 <- renderText({
     paste(
