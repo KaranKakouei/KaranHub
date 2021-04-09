@@ -952,7 +952,7 @@ server <- function(input,output){
     "            col_2 = ab['b']",
     "            pr2 = col_1.corr(col_2)",
     "",
-    "            if (layer_size == 128 and dense_layer == 5):",
+    "            if (layer_size == 128 and dense_layer == 1):",
     "                result = {'Model': model_name,",
     "                'R2_score': [R2_score],",
     "                'MeanAE': [MeanAE],",
